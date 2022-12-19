@@ -13,6 +13,8 @@
 		214D94312950D500002AE17E /* MachineListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D942F2950D4FF002AE17E /* MachineListViewController.xib */; };
 		214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D94322950D50F002AE17E /* CodeScannerViewController.swift */; };
 		214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94332950D50F002AE17E /* CodeScannerViewController.xib */; };
+		214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D94362950E9C6002AE17E /* AddMachineViewController.swift */; };
+		214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94372950E9C6002AE17E /* AddMachineViewController.xib */; };
 		21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47802950C7BA00191791 /* AppDelegate.swift */; };
 		21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47822950C7BA00191791 /* SceneDelegate.swift */; };
 		21BB47852950C7BA00191791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47842950C7BA00191791 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		214D942F2950D4FF002AE17E /* MachineListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineListViewController.xib; sourceTree = "<group>"; };
 		214D94322950D50F002AE17E /* CodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerViewController.swift; sourceTree = "<group>"; };
 		214D94332950D50F002AE17E /* CodeScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeScannerViewController.xib; sourceTree = "<group>"; };
+		214D94362950E9C6002AE17E /* AddMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewController.swift; sourceTree = "<group>"; };
+		214D94372950E9C6002AE17E /* AddMachineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMachineViewController.xib; sourceTree = "<group>"; };
 		21BB477D2950C7BA00191791 /* ImageMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB47802950C7BA00191791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB47822950C7BA00191791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 				214D942F2950D4FF002AE17E /* MachineListViewController.xib */,
 				214D94322950D50F002AE17E /* CodeScannerViewController.swift */,
 				214D94332950D50F002AE17E /* CodeScannerViewController.xib */,
+				214D94362950E9C6002AE17E /* AddMachineViewController.swift */,
+				214D94372950E9C6002AE17E /* AddMachineViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 			files = (
 				214D942D2950D175002AE17E /* HomepageViewController.xib in Resources */,
 				21BB47902950C7BD00191791 /* LaunchScreen.storyboard in Resources */,
+				214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */,
 				214D94312950D500002AE17E /* MachineListViewController.xib in Resources */,
 				214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */,
 				21BB478D2950C7BD00191791 /* Assets.xcassets in Resources */,
@@ -172,6 +179,7 @@
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
 				21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */,
 				21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */,
+				214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */,
 				214D942C2950D175002AE17E /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

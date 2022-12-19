@@ -12,6 +12,7 @@ class HomepageViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             
+        self.navigationItem.title = "Home"
         setupTabbar()
     }
 
@@ -20,7 +21,6 @@ class HomepageViewController: UITabBarController {
 
         self.delegate = self
         self.tabBar.tintColor = UIColor.systemBlue
-//        self.tabBar.isTranslucent = false
     }
     
     private func setupTabbar() {
@@ -34,9 +34,6 @@ class HomepageViewController: UITabBarController {
         tabTwo.tabBarItem = tabTwoBarItem2
             
         self.viewControllers = [tabOne, tabTwo]
-        
-//        self.tabBar.tintColor = UIColor.white
-//        self.tabBar.isTranslucent = false
     }
 
 }
