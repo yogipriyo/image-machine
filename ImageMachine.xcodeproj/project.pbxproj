@@ -25,6 +25,9 @@
 		21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */; };
 		21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A3322951E967002FE873 /* ExtendedViewController.swift */; };
 		21F3A33529521DCB002FE873 /* MachineListViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A33429521DCB002FE873 /* MachineListViewModels.swift */; };
+		21F3A33929522399002FE873 /* MachineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A33729522398002FE873 /* MachineTableViewCell.swift */; };
+		21F3A33A29522399002FE873 /* MachineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F3A33829522398002FE873 /* MachineTableViewCell.xib */; };
+		21F3A33E29522430002FE873 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A33D29522430002FE873 /* CellIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewModels.swift; sourceTree = "<group>"; };
 		21F3A3322951E967002FE873 /* ExtendedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedViewController.swift; sourceTree = "<group>"; };
 		21F3A33429521DCB002FE873 /* MachineListViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListViewModels.swift; sourceTree = "<group>"; };
+		21F3A33729522398002FE873 /* MachineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineTableViewCell.swift; sourceTree = "<group>"; };
+		21F3A33829522398002FE873 /* MachineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineTableViewCell.xib; sourceTree = "<group>"; };
+		21F3A33D29522430002FE873 /* CellIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		214D94292950D15E002AE17E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21F3A33629522309002FE873 /* TableViewCells */,
 				214D942A2950D175002AE17E /* HomepageViewController.swift */,
 				214D942B2950D175002AE17E /* HomepageViewController.xib */,
 				214D942E2950D4FF002AE17E /* MachineListViewController.swift */,
@@ -114,6 +121,7 @@
 			children = (
 				21F3A32929518F35002FE873 /* Machine.swift */,
 				21F3A32B29518F40002FE873 /* MachineProvider.swift */,
+				21F3A33D29522430002FE873 /* CellIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +141,15 @@
 				21F3A3322951E967002FE873 /* ExtendedViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		21F3A33629522309002FE873 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				21F3A33729522398002FE873 /* MachineTableViewCell.swift */,
+				21F3A33829522398002FE873 /* MachineTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +215,7 @@
 				214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */,
 				214D94312950D500002AE17E /* MachineListViewController.xib in Resources */,
 				214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */,
+				21F3A33A29522399002FE873 /* MachineTableViewCell.xib in Resources */,
 				21BB478D2950C7BD00191791 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,10 +229,12 @@
 			files = (
 				21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */,
 				214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */,
+				21F3A33E29522430002FE873 /* CellIdentifier.swift in Sources */,
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
 				21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */,
 				21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */,
 				21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */,
+				21F3A33929522399002FE873 /* MachineTableViewCell.swift in Sources */,
 				21F3A33529521DCB002FE873 /* MachineListViewModels.swift in Sources */,
 				21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */,
 				21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */,
