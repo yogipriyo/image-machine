@@ -21,6 +21,9 @@
 		21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47892950C7BA00191791 /* ImageMachine.xcdatamodeld */; };
 		21BB478D2950C7BD00191791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BB478C2950C7BD00191791 /* Assets.xcassets */; };
 		21BB47902950C7BD00191791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BB478E2950C7BD00191791 /* LaunchScreen.storyboard */; };
+		21F3A32A29518F35002FE873 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32929518F35002FE873 /* Machine.swift */; };
+		21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32B29518F40002FE873 /* MachineProvider.swift */; };
+		21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		21BB478C2950C7BD00191791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21BB478F2950C7BD00191791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21BB47912950C7BD00191791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F3A32929518F35002FE873 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		21F3A32B29518F40002FE873 /* MachineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineProvider.swift; sourceTree = "<group>"; };
+		21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 		21BB477F2950C7BA00191791 /* ImageMachine */ = {
 			isa = PBXGroup;
 			children = (
+				21F3A32D2951C152002FE873 /* ViewModels */,
+				21F3A32829518F18002FE873 /* Models */,
 				214D94292950D15E002AE17E /* Views */,
 				21BB47802950C7BA00191791 /* AppDelegate.swift */,
 				21BB47822950C7BA00191791 /* SceneDelegate.swift */,
@@ -97,6 +105,23 @@
 				21BB47892950C7BA00191791 /* ImageMachine.xcdatamodeld */,
 			);
 			path = ImageMachine;
+			sourceTree = "<group>";
+		};
+		21F3A32829518F18002FE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21F3A32929518F35002FE873 /* Machine.swift */,
+				21F3A32B29518F40002FE873 /* MachineProvider.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21F3A32D2951C152002FE873 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +203,12 @@
 				214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */,
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
 				21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */,
+				21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */,
 				21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */,
+				21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */,
 				214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */,
 				214D942C2950D175002AE17E /* HomepageViewController.swift in Sources */,
+				21F3A32A29518F35002FE873 /* Machine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
