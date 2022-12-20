@@ -17,7 +17,6 @@
 		214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94372950E9C6002AE17E /* AddMachineViewController.xib */; };
 		21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47802950C7BA00191791 /* AppDelegate.swift */; };
 		21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47822950C7BA00191791 /* SceneDelegate.swift */; };
-		21BB47852950C7BA00191791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47842950C7BA00191791 /* ViewController.swift */; };
 		21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47892950C7BA00191791 /* ImageMachine.xcdatamodeld */; };
 		21BB478D2950C7BD00191791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BB478C2950C7BD00191791 /* Assets.xcassets */; };
 		21BB47902950C7BD00191791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BB478E2950C7BD00191791 /* LaunchScreen.storyboard */; };
@@ -25,6 +24,7 @@
 		21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32B29518F40002FE873 /* MachineProvider.swift */; };
 		21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */; };
 		21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A3322951E967002FE873 /* ExtendedViewController.swift */; };
+		21F3A33529521DCB002FE873 /* MachineListViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A33429521DCB002FE873 /* MachineListViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,6 @@
 		21BB477D2950C7BA00191791 /* ImageMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB47802950C7BA00191791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB47822950C7BA00191791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		21BB47842950C7BA00191791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		21BB478A2950C7BA00191791 /* ImageMachine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageMachine.xcdatamodel; sourceTree = "<group>"; };
 		21BB478C2950C7BD00191791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21BB478F2950C7BD00191791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		21F3A32B29518F40002FE873 /* MachineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineProvider.swift; sourceTree = "<group>"; };
 		21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewModels.swift; sourceTree = "<group>"; };
 		21F3A3322951E967002FE873 /* ExtendedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedViewController.swift; sourceTree = "<group>"; };
+		21F3A33429521DCB002FE873 /* MachineListViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,6 @@
 				214D94292950D15E002AE17E /* Views */,
 				21BB47802950C7BA00191791 /* AppDelegate.swift */,
 				21BB47822950C7BA00191791 /* SceneDelegate.swift */,
-				21BB47842950C7BA00191791 /* ViewController.swift */,
 				21BB478C2950C7BD00191791 /* Assets.xcassets */,
 				21BB478E2950C7BD00191791 /* LaunchScreen.storyboard */,
 				21BB47912950C7BD00191791 /* Info.plist */,
@@ -123,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */,
+				21F3A33429521DCB002FE873 /* MachineListViewModels.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -209,13 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21BB47852950C7BA00191791 /* ViewController.swift in Sources */,
 				21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */,
 				214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */,
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
 				21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */,
 				21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */,
 				21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */,
+				21F3A33529521DCB002FE873 /* MachineListViewModels.swift in Sources */,
 				21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */,
 				21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */,
 				214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */,

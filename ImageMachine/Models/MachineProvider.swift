@@ -66,34 +66,30 @@ class MachineProvider {
 //        }
 //    }
     
-//    func getAllFavorites(completion: @escaping(_ members: [GameDetails]) -> Void) {
-//        let taskContext = newTaskContext()
-//        taskContext.perform {
-//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GameItem")
-//            do {
-//                let results = try taskContext.fetch(fetchRequest)
-//                var gameList: [GameDetails] = []
-//                for result in results {
-//                    let game = GameDetails(
-//                        id: Int(result.value(forKeyPath: "id") as? Int32 ?? 0),
-//                        slug: result.value(forKeyPath: "slug") as? String ?? "",
-//                        name: result.value(forKeyPath: "name") as? String ?? "",
-//                        description: result.value(forKeyPath: "description") as? String ?? "",
-//                        platforms: [], stores: [],
-//                        released: result.value(forKeyPath: "released") as? String ?? "",
-//                        backgroundImage: result.value(forKeyPath: "backgroundImage") as? String ?? "",
-//                        rating: result.value(forKeyPath: "rating") as? Double ?? 0.0,
-//                        ratingsCount: Int(result.value(forKeyPath: "ratingsCount") as? Int32 ?? 0)
-//                    )
-//
-//                    gameList.append(game)
-//                }
-//                completion(gameList)
-//            } catch let error as NSError {
-//                print("Could not fetch. \(error), \(error.userInfo)")
-//            }
-//        }
-//    }
+    func getAllMachines(completion: @escaping(_ members: [Machine]) -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MachineItem")
+            do {
+                let results = try taskContext.fetch(fetchRequest)
+                var machineList: [Machine] = []
+                for result in results {
+                    let machine = Machine(
+                        id: Int(result.value(forKeyPath: "id") as? Int32 ?? 0),
+                        name: result.value(forKeyPath: "name") as? String ?? "",
+                        type: result.value(forKeyPath: "type") as? String ?? "",
+                        lastUpdated: result.value(forKeyPath: "lastUpdated") as? Date ?? Date(),
+                        codeNumber: Int(result.value(forKeyPath: "id") as? Int32 ?? 0)
+                    )
+
+                    machineList.append(machine)
+                }
+                completion(machineList)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+        }
+    }
     
     func addMachine(_ machineData: Machine, completion: @escaping() -> Void) {
         let taskContext = newTaskContext()

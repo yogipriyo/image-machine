@@ -8,11 +8,21 @@
 import UIKit
 
 class MachineListViewController: UIViewController {
+    
+    private var viewModel: MachineListViewModels = MachineListViewModels()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.getAllMachines()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        viewModel.delegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -26,4 +36,13 @@ class MachineListViewController: UIViewController {
         self.navigationController?.pushViewController(addMachineVC, animated: true)
     }
     
+}
+
+extension MachineListViewController: MachineListViewModelsDelegate {
+    
+    func populateMachineList(_ data: [Machine]) {
+        DispatchQueue.main.async { [weak self] in
+            print(data)
+        }
+    }
 }

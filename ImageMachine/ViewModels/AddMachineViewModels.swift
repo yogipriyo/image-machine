@@ -16,7 +16,6 @@ class AddMachineViewModels {
     var delegate: AddMachineViewModelsDelegate?
     private lazy var machineProvider: MachineProvider = { return MachineProvider() }()
     
-    
     func saveMachine(_ machineData: Machine) {
         machineProvider.addMachine(machineData) { [weak self] in
             self?.delegate?.saveMachineFinished()
