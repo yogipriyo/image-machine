@@ -31,7 +31,6 @@ final class MachineTableViewCell: UITableViewCell {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        print(formatter.string(from: data.lastUpdated))
         lastMaintenanceLabel.text = formatter.string(from: data.lastUpdated)
     }
     
