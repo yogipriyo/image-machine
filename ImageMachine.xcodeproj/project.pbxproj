@@ -110,6 +110,7 @@
 		21BB477F2950C7BA00191791 /* ImageMachine */ = {
 			isa = PBXGroup;
 			children = (
+				21F3A3452952DFCE002FE873 /* Helpers */,
 				21F3A3312951E94B002FE873 /* Extensions */,
 				21F3A32D2951C152002FE873 /* ViewModels */,
 				21F3A32829518F18002FE873 /* Models */,
@@ -159,6 +160,13 @@
 				21F3A33829522398002FE873 /* MachineTableViewCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		21F3A3452952DFCE002FE873 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

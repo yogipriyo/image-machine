@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class MachineDetailsViewController: UIViewController {
     
@@ -15,11 +16,13 @@ class MachineDetailsViewController: UIViewController {
     @IBOutlet weak var machineCodeNumberLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    
     private var machineDetails: Machine
     private var viewModel: MachineDetailsViewModels = MachineDetailsViewModels()
     
     init(_ machineDetails: Machine) {
         self.machineDetails = machineDetails
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,11 +38,13 @@ class MachineDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        viewModel.delegate = self
         
+        setupDelegation()
         populateContent()
+    }
+    
+    private func setupDelegation() {
+        viewModel.delegate = self
     }
     
     private func populateContent() {
@@ -47,6 +52,16 @@ class MachineDetailsViewController: UIViewController {
         machineNameLabel.text = machineDetails.name
         machineTypeLabel.text = machineDetails.type
         machineCodeNumberLabel.text = String(machineDetails.codeNumber)
+    }
+    
+    @IBAction func machineImageTapped(_ sender: UIButton) {
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 3 // Selection limit. Set to 0 for unlimited.
+        configuration.filter = .images // he types of media that can be get.
+        // configuration.filter = .any([.videos,livePhotos]) // Multiple types of media
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton) {
@@ -83,5 +98,25 @@ extension MachineDetailsViewController: MachineDetailsViewModelsDelegate {
             self?.present(alert, animated: true, completion: nil)
         }
     }
+    
+}
+
+extension MachineDetailsViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
+        let itemProviders = results.map(\.itemProvider)
+        for item in itemProviders {
+            if item.canLoadObject(ofClass: UIImage.self) {
+                item.loadObject(ofClass: UIImage.self) { (image, error) in
+                    DispatchQueue.main.async {
+                        if let image = image as? UIImage {
+                            print(image)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     
 }

@@ -78,8 +78,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-of-V2h">
+                    <rect key="frame" x="16" y="260" width="140" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Machine Image"/>
+                    <connections>
+                        <action selector="machineImageTapped:" destination="-1" eventType="touchUpInside" id="uu2-sq-zq9"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of Images :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6x-Sj-bxg">
-                    <rect key="frame" x="15.999999999999993" y="260" width="115.33333333333331" height="21"/>
+                    <rect key="frame" x="15.999999999999993" y="311" width="115.33333333333331" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -125,11 +133,13 @@
             <constraints>
                 <constraint firstItem="61k-Lc-bY8" firstAttribute="top" secondItem="9W8-gF-sZU" secondAttribute="bottom" constant="8" id="2x6-eV-Hca"/>
                 <constraint firstItem="14h-TY-YiU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="165" id="7Zp-uK-sRE"/>
+                <constraint firstItem="Qxy-of-V2h" firstAttribute="top" secondItem="61k-Lc-bY8" secondAttribute="bottom" constant="32" id="ACn-k1-070"/>
                 <constraint firstItem="S80-Ox-fvM" firstAttribute="centerY" secondItem="4XJ-lq-gtd" secondAttribute="centerY" id="Bnb-ct-fWT"/>
                 <constraint firstItem="S80-Ox-fvM" firstAttribute="leading" secondItem="Gzr-0W-y7Y" secondAttribute="leading" id="Edx-oZ-Bct"/>
                 <constraint firstItem="61k-Lc-bY8" firstAttribute="leading" secondItem="9W8-gF-sZU" secondAttribute="leading" id="Kiw-Wv-iM4"/>
                 <constraint firstItem="pVF-6t-Tss" firstAttribute="trailing" secondItem="S80-Ox-fvM" secondAttribute="trailing" id="LJU-Wf-gPM"/>
                 <constraint firstItem="pVF-6t-Tss" firstAttribute="centerY" secondItem="9W8-gF-sZU" secondAttribute="centerY" id="Nn9-ri-FWd"/>
+                <constraint firstItem="Qxy-of-V2h" firstAttribute="leading" secondItem="61k-Lc-bY8" secondAttribute="leading" id="OKk-km-p2L"/>
                 <constraint firstItem="9W8-gF-sZU" firstAttribute="top" secondItem="4XJ-lq-gtd" secondAttribute="bottom" constant="8" id="Sun-mf-dHk"/>
                 <constraint firstItem="9W8-gF-sZU" firstAttribute="leading" secondItem="4XJ-lq-gtd" secondAttribute="leading" id="XXD-Ao-wei"/>
                 <constraint firstItem="4XJ-lq-gtd" firstAttribute="leading" secondItem="jVF-dD-1pE" secondAttribute="leading" id="Zq0-0a-6yJ"/>
@@ -146,7 +156,7 @@
                 <constraint firstItem="Gzr-0W-y7Y" firstAttribute="leading" secondItem="14h-TY-YiU" secondAttribute="leading" id="p8B-CP-2JP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="14h-TY-YiU" secondAttribute="trailing" constant="16" id="q6u-b6-Oos"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FyF-CT-F9z" secondAttribute="bottom" id="qYt-gQ-dAt"/>
-                <constraint firstItem="V6x-Sj-bxg" firstAttribute="top" secondItem="61k-Lc-bY8" secondAttribute="bottom" constant="32" id="ySy-j5-8i3"/>
+                <constraint firstItem="V6x-Sj-bxg" firstAttribute="top" secondItem="Qxy-of-V2h" secondAttribute="bottom" constant="16" id="xEh-QY-0lG"/>
                 <constraint firstItem="S80-Ox-fvM" firstAttribute="trailing" secondItem="Gzr-0W-y7Y" secondAttribute="trailing" id="yTT-j4-Scz"/>
                 <constraint firstItem="V6x-Sj-bxg" firstAttribute="leading" secondItem="61k-Lc-bY8" secondAttribute="leading" id="yrK-OF-e1i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FyF-CT-F9z" secondAttribute="trailing" id="zjM-Kp-18c"/>
