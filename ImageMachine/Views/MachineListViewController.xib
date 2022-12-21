@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MachineListViewController" customModule="ImageMachine" customModuleProvider="target">
             <connections>
+                <outlet property="addMachineButton" destination="HOx-df-bxg" id="AKO-NY-hkm"/>
                 <outlet property="machineListTableView" destination="2rS-gO-ehF" id="egv-Qp-esX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

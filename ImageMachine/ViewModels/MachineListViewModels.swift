@@ -5,8 +5,6 @@
 //  Created by Yogi Priyo Prayogo on 20/12/22.
 //
 
-import Foundation
-
 protocol MachineListViewModelsDelegate {
     func populateMachineList(_ data: [Machine])
 }

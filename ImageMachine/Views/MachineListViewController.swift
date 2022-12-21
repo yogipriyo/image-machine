@@ -9,6 +9,7 @@ import UIKit
 
 class MachineListViewController: UIViewController {
     
+    @IBOutlet weak var addMachineButton: UIButton!
     @IBOutlet weak var machineListTableView: UITableView!
     
     private var viewModel: MachineListViewModels = MachineListViewModels()
@@ -26,6 +27,7 @@ class MachineListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         viewModel.delegate = self
+        addMachineButton.tintColor = .white
         
         setupTable()
     }
@@ -84,8 +86,8 @@ extension MachineListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let gameDetailsVC: GameDetailsViewController = GameDetailsViewController(gameList[indexPath.row].id)
-//        navigationController?.pushViewController(gameDetailsVC, animated: true)
+        let machineDetailsVC: MachineDetailsViewController = MachineDetailsViewController(machineList[indexPath.row])
+        navigationController?.pushViewController(machineDetailsVC, animated: true)
     }
     
 }

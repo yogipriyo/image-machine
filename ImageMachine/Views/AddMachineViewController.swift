@@ -62,7 +62,7 @@ class AddMachineViewController: UIViewController {
             )
             viewModel.saveMachine(machineData)
         } else {
-            self.displayErrorAlert(title: "Error!", message: "Please fill in all the fields!")
+            self.displaySimpleAlert(title: "Error!", message: "Please fill in all the fields!")
         }
     }
     
@@ -71,7 +71,7 @@ class AddMachineViewController: UIViewController {
 extension AddMachineViewController: AddMachineViewModelsDelegate {
     func saveMachineFinished() {
         DispatchQueue.main.async { [weak self] in
-            self?.displayErrorAlert(title: "Success!", message: "A machine has been created in your phone!")
+            self?.displaySimpleAlert(title: "Success!", message: "A machine has been created in your phone!")
         }
     }
 }

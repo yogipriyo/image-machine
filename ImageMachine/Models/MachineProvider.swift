@@ -47,23 +47,23 @@ class MachineProvider {
 //        }
 //    }
 //
-//    func deleteFavorite(_ id: Int, completion: @escaping() -> Void) {
-//        let taskContext = newTaskContext()
-//        taskContext.perform {
-//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameItem")
-//            fetchRequest.fetchLimit = 1
-//            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
-//
-//            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//            batchDeleteRequest.resultType = .resultTypeCount
-//
-//            if let batchDeleteResult = try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
-//                if batchDeleteResult.result != nil {
-//                    completion()
-//                }
-//            }
-//        }
-//    }
+    func deleteMachine(_ id: Int, completion: @escaping() -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MachineItem")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
+
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            batchDeleteRequest.resultType = .resultTypeCount
+
+            if let batchDeleteResult = try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
+                if batchDeleteResult.result != nil {
+                    completion()
+                }
+            }
+        }
+    }
     
     func getAllMachines(completion: @escaping(_ members: [Machine]) -> Void) {
         let taskContext = newTaskContext()
