@@ -9,6 +9,10 @@ import UIKit
 
 class MachineDetailsViewController: UIViewController {
     
+    @IBOutlet weak var machineIdLabel: UILabel!
+    @IBOutlet weak var machineNameLabel: UILabel!
+    @IBOutlet weak var machineTypeLabel: UILabel!
+    @IBOutlet weak var machineCodeNumberLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     private var machineDetails: Machine
@@ -26,7 +30,7 @@ class MachineDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = machineDetails.name
+        navigationItem.title = "Machine Details"
     }
 
     override func viewDidLoad() {
@@ -34,6 +38,15 @@ class MachineDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         viewModel.delegate = self
+        
+        populateContent()
+    }
+    
+    private func populateContent() {
+        machineIdLabel.text = String(machineDetails.id)
+        machineNameLabel.text = machineDetails.name
+        machineTypeLabel.text = machineDetails.type
+        machineCodeNumberLabel.text = String(machineDetails.codeNumber)
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton) {
