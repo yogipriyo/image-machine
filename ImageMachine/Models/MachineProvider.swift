@@ -81,7 +81,7 @@ class MachineProvider {
                         name: result.value(forKeyPath: "name") as? String ?? "",
                         type: result.value(forKeyPath: "type") as? String ?? "",
                         lastUpdated: result.value(forKeyPath: "lastUpdated") as? Date ?? Date(),
-                        codeNumber: Int(result.value(forKeyPath: "id") as? Int32 ?? 0)
+                        codeNumber: Int(result.value(forKeyPath: "codeNumber") as? Int32 ?? 0)
                     )
 
                     machineList.append(machine)
@@ -132,6 +132,32 @@ class MachineProvider {
             }
         }
     }
+    
+    func getMachine(_ codeNumber: Int, completion: @escaping(_ machineData: Machine) -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MachineItem")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "codeNumber == \(codeNumber)")
+            do {
+                if let result = try taskContext.fetch(fetchRequest).first {
+                    let machineData = Machine(
+                        id: Int(result.value(forKeyPath: "id") as? Int32 ?? 0),
+                        name: result.value(forKeyPath: "name") as? String ?? "",
+                        type: result.value(forKeyPath: "type") as? String ?? "",
+                        lastUpdated: result.value(forKeyPath: "lastUpdated") as? Date ?? Date(),
+                        codeNumber: Int(result.value(forKeyPath: "codeNumber") as? Int32 ?? 0)
+                    )
+                    completion(machineData)
+                } else {
+                    let emptyShellMachineData = Machine(id: 0, name: "not found", type: "", lastUpdated: Date(), codeNumber: 0)
+                    completion(emptyShellMachineData)
+                }
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+        }
+    }
 
     func getMachineImages(_ machineId: Int, completion: @escaping(_ machineImage: [Data], _ imageIds: [Int]) -> Void) {
         let taskContext = newTaskContext()
@@ -147,9 +173,9 @@ class MachineProvider {
                     idList.append(data.value(forKey: "imageId") as? Int ?? 0)
                 }
                 completion(dataList, idList)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
         }
-      }
     }
 }

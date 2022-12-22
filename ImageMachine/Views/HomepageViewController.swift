@@ -29,7 +29,7 @@ class HomepageViewController: UITabBarController {
         tabOne.tabBarItem = tabOneBarItem
             
             
-        let tabTwo = CodeScannerViewController()
+        let tabTwo = ScannerViewController()
         let tabTwoBarItem2 = UITabBarItem(title: "Scan QR", image: UIImage(named: "qr-code"), selectedImage: UIImage(named: "selectedImage2.png"))
         tabTwo.tabBarItem = tabTwoBarItem2
             
@@ -39,9 +39,7 @@ class HomepageViewController: UITabBarController {
 }
 
 extension HomepageViewController: UITabBarControllerDelegate {
-    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("Selected")
     }
-    
 }

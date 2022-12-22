@@ -11,8 +11,6 @@
 		214D942D2950D175002AE17E /* HomepageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D942B2950D175002AE17E /* HomepageViewController.xib */; };
 		214D94302950D500002AE17E /* MachineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D942E2950D4FF002AE17E /* MachineListViewController.swift */; };
 		214D94312950D500002AE17E /* MachineListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D942F2950D4FF002AE17E /* MachineListViewController.xib */; };
-		214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D94322950D50F002AE17E /* CodeScannerViewController.swift */; };
-		214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94332950D50F002AE17E /* CodeScannerViewController.xib */; };
 		214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D94362950E9C6002AE17E /* AddMachineViewController.swift */; };
 		214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94372950E9C6002AE17E /* AddMachineViewController.xib */; };
 		2157B595295366CB00A159D0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157B593295366CB00A159D0 /* ImageCollectionViewCell.swift */; };
@@ -35,6 +33,8 @@
 		21F3A34129523527002FE873 /* MachineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A33F29523527002FE873 /* MachineDetailsViewController.swift */; };
 		21F3A34229523527002FE873 /* MachineDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F3A34029523527002FE873 /* MachineDetailsViewController.xib */; };
 		21F3A3442952B2BF002FE873 /* MachineDetailsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */; };
+		21F977332954E41B0079AE3C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F977322954E41B0079AE3C /* ScannerViewController.swift */; };
+		21F977352954E8D80079AE3C /* ScannerViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F977342954E8D80079AE3C /* ScannerViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,6 @@
 		214D942B2950D175002AE17E /* HomepageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageViewController.xib; sourceTree = "<group>"; };
 		214D942E2950D4FF002AE17E /* MachineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListViewController.swift; sourceTree = "<group>"; };
 		214D942F2950D4FF002AE17E /* MachineListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineListViewController.xib; sourceTree = "<group>"; };
-		214D94322950D50F002AE17E /* CodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerViewController.swift; sourceTree = "<group>"; };
-		214D94332950D50F002AE17E /* CodeScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeScannerViewController.xib; sourceTree = "<group>"; };
 		214D94362950E9C6002AE17E /* AddMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewController.swift; sourceTree = "<group>"; };
 		214D94372950E9C6002AE17E /* AddMachineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMachineViewController.xib; sourceTree = "<group>"; };
 		2157B593295366CB00A159D0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +66,8 @@
 		21F3A33F29523527002FE873 /* MachineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineDetailsViewController.swift; sourceTree = "<group>"; };
 		21F3A34029523527002FE873 /* MachineDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineDetailsViewController.xib; sourceTree = "<group>"; };
 		21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineDetailsViewModels.swift; sourceTree = "<group>"; };
+		21F977322954E41B0079AE3C /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		21F977342954E8D80079AE3C /* ScannerViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +90,13 @@
 				214D942B2950D175002AE17E /* HomepageViewController.xib */,
 				214D942E2950D4FF002AE17E /* MachineListViewController.swift */,
 				214D942F2950D4FF002AE17E /* MachineListViewController.xib */,
-				214D94322950D50F002AE17E /* CodeScannerViewController.swift */,
-				214D94332950D50F002AE17E /* CodeScannerViewController.xib */,
 				214D94362950E9C6002AE17E /* AddMachineViewController.swift */,
 				214D94372950E9C6002AE17E /* AddMachineViewController.xib */,
 				21F3A33F29523527002FE873 /* MachineDetailsViewController.swift */,
 				21F3A34029523527002FE873 /* MachineDetailsViewController.xib */,
 				2157B5972954655300A159D0 /* ImageDetailsViewController.swift */,
 				2157B5982954655300A159D0 /* ImageDetailsViewController.xib */,
+				21F977322954E41B0079AE3C /* ScannerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 				21F3A32E2951C168002FE873 /* AddMachineViewModels.swift */,
 				21F3A33429521DCB002FE873 /* MachineListViewModels.swift */,
 				21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */,
+				21F977342954E8D80079AE3C /* ScannerViewModels.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -251,7 +251,6 @@
 				21BB47902950C7BD00191791 /* LaunchScreen.storyboard in Resources */,
 				214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */,
 				214D94312950D500002AE17E /* MachineListViewController.xib in Resources */,
-				214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */,
 				21F3A33A29522399002FE873 /* MachineTableViewCell.xib in Resources */,
 				21F3A34229523527002FE873 /* MachineDetailsViewController.xib in Resources */,
 				2157B596295366CB00A159D0 /* ImageCollectionViewCell.xib in Resources */,
@@ -269,7 +268,7 @@
 			files = (
 				2157B595295366CB00A159D0 /* ImageCollectionViewCell.swift in Sources */,
 				21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */,
-				214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */,
+				21F977332954E41B0079AE3C /* ScannerViewController.swift in Sources */,
 				21F3A33E29522430002FE873 /* CellIdentifier.swift in Sources */,
 				21F3A3442952B2BF002FE873 /* MachineDetailsViewModels.swift in Sources */,
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
@@ -277,6 +276,7 @@
 				21F3A32F2951C168002FE873 /* AddMachineViewModels.swift in Sources */,
 				21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */,
 				21F3A34129523527002FE873 /* MachineDetailsViewController.swift in Sources */,
+				21F977352954E8D80079AE3C /* ScannerViewModels.swift in Sources */,
 				21F3A33929522399002FE873 /* MachineTableViewCell.swift in Sources */,
 				21F3A33529521DCB002FE873 /* MachineListViewModels.swift in Sources */,
 				2157B5992954655300A159D0 /* ImageDetailsViewController.swift in Sources */,
@@ -423,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TPU4US8598;
+				DEVELOPMENT_TEAM = XCXVS5NTMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -431,6 +431,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TPU4US8598;
+				DEVELOPMENT_TEAM = XCXVS5NTMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -459,6 +460,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
