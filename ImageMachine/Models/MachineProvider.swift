@@ -133,6 +133,27 @@ class MachineProvider {
         }
     }
     
+    func updateMachine(_ machineData: Machine, completion: @escaping() -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MachineItem")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == \(machineData.id)")
+            if let result = try? taskContext.fetch(fetchRequest), let machine = result.first as? MachineItem {
+                machine.setValue(machineData.name, forKeyPath: "name")
+                machine.setValue(machineData.type, forKeyPath: "type")
+                machine.setValue(machineData.codeNumber, forKeyPath: "codeNumber")
+                
+                do {
+                    try taskContext.save()
+                    completion()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        }
+    }
+    
     func getMachine(_ codeNumber: Int, completion: @escaping(_ machineData: Machine) -> Void) {
         let taskContext = newTaskContext()
         taskContext.perform {

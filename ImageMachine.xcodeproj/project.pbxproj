@@ -17,6 +17,7 @@
 		2157B596295366CB00A159D0 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */; };
 		2157B5992954655300A159D0 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157B5972954655300A159D0 /* ImageDetailsViewController.swift */; };
 		2157B59A2954655300A159D0 /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2157B5982954655300A159D0 /* ImageDetailsViewController.xib */; };
+		217351DA2955161E0075CCC6 /* EditMachineViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217351D92955161E0075CCC6 /* EditMachineViewModels.swift */; };
 		21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47802950C7BA00191791 /* AppDelegate.swift */; };
 		21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47822950C7BA00191791 /* SceneDelegate.swift */; };
 		21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47892950C7BA00191791 /* ImageMachine.xcdatamodeld */; };
@@ -35,6 +36,8 @@
 		21F3A3442952B2BF002FE873 /* MachineDetailsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */; };
 		21F977332954E41B0079AE3C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F977322954E41B0079AE3C /* ScannerViewController.swift */; };
 		21F977352954E8D80079AE3C /* ScannerViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F977342954E8D80079AE3C /* ScannerViewModels.swift */; };
+		21F977382954FC6C0079AE3C /* EditMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F977362954FC6C0079AE3C /* EditMachineViewController.swift */; };
+		21F977392954FC6C0079AE3C /* EditMachineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F977372954FC6C0079AE3C /* EditMachineViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,7 @@
 		2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		2157B5972954655300A159D0 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		2157B5982954655300A159D0 /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
+		217351D92955161E0075CCC6 /* EditMachineViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMachineViewModels.swift; sourceTree = "<group>"; };
 		21BB477D2950C7BA00191791 /* ImageMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB47802950C7BA00191791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB47822950C7BA00191791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineDetailsViewModels.swift; sourceTree = "<group>"; };
 		21F977322954E41B0079AE3C /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		21F977342954E8D80079AE3C /* ScannerViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModels.swift; sourceTree = "<group>"; };
+		21F977362954FC6C0079AE3C /* EditMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMachineViewController.swift; sourceTree = "<group>"; };
+		21F977372954FC6C0079AE3C /* EditMachineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditMachineViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 				2157B5972954655300A159D0 /* ImageDetailsViewController.swift */,
 				2157B5982954655300A159D0 /* ImageDetailsViewController.xib */,
 				21F977322954E41B0079AE3C /* ScannerViewController.swift */,
+				21F977362954FC6C0079AE3C /* EditMachineViewController.swift */,
+				21F977372954FC6C0079AE3C /* EditMachineViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				21F3A33429521DCB002FE873 /* MachineListViewModels.swift */,
 				21F3A3432952B2BE002FE873 /* MachineDetailsViewModels.swift */,
 				21F977342954E8D80079AE3C /* ScannerViewModels.swift */,
+				217351D92955161E0075CCC6 /* EditMachineViewModels.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F977392954FC6C0079AE3C /* EditMachineViewController.xib in Resources */,
 				214D942D2950D175002AE17E /* HomepageViewController.xib in Resources */,
 				21BB47902950C7BD00191791 /* LaunchScreen.storyboard in Resources */,
 				214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */,
@@ -270,6 +280,7 @@
 				21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */,
 				21F977332954E41B0079AE3C /* ScannerViewController.swift in Sources */,
 				21F3A33E29522430002FE873 /* CellIdentifier.swift in Sources */,
+				21F977382954FC6C0079AE3C /* EditMachineViewController.swift in Sources */,
 				21F3A3442952B2BF002FE873 /* MachineDetailsViewModels.swift in Sources */,
 				214D94302950D500002AE17E /* MachineListViewController.swift in Sources */,
 				21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */,
@@ -282,6 +293,7 @@
 				2157B5992954655300A159D0 /* ImageDetailsViewController.swift in Sources */,
 				21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */,
 				21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */,
+				217351DA2955161E0075CCC6 /* EditMachineViewModels.swift in Sources */,
 				214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */,
 				214D942C2950D175002AE17E /* HomepageViewController.swift in Sources */,
 				21F3A32A29518F35002FE873 /* Machine.swift in Sources */,

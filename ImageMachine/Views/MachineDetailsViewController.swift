@@ -93,7 +93,8 @@ class MachineDetailsViewController: UIViewController {
     }
     
     @IBAction func editButtonTapped(_ sender: UIButton) {
-        
+        let editMachineVC: EditMachineViewController = EditMachineViewController(machineDetails)
+        self.navigationController?.pushViewController(editMachineVC, animated: true)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
