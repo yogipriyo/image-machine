@@ -19,6 +19,7 @@ class MachineDetailsViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     private var imageList: [UIImage] = []
+    private var imageIds: [Int] = []
     private var machineDetails: Machine
     private var viewModel: MachineDetailsViewModels = MachineDetailsViewModels()
     
@@ -68,6 +69,8 @@ class MachineDetailsViewController: UIViewController {
     }
     
     private func retrieveImages() {
+        imageList = []
+        imageIds = []
         viewModel.getImages(machineId: machineDetails.id)
     }
     
@@ -111,10 +114,14 @@ class MachineDetailsViewController: UIViewController {
 }
 
 extension MachineDetailsViewController: MachineDetailsViewModelsDelegate {
-    func retrievedImages(_ datas: [Data]) {
+    func retrievedImages(datas: [Data], ids: [Int]) {
         DispatchQueue.main.async { [weak self] in
-            print("image has been retrieved \(datas.count)")
-            self?.constructImageArray(datas)
+            if datas.isEmpty {
+                self?.imagesCollectionView.reloadData()
+            } else {
+                self?.constructImageArray(datas)
+                self?.imageIds = ids
+            }
         }
     }
     
@@ -136,22 +143,32 @@ extension MachineDetailsViewController: MachineDetailsViewModelsDelegate {
             print("image has been saved")
         }
     }
+    
+    func imageDeleted() {
+        DispatchQueue.main.async { [weak self] in
+            self?.displaySimpleAlert(title: "Success!", message: "Image has been removed!")
+            self?.retrieveImages()
+        }
+    }
 }
 
 extension MachineDetailsViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         let itemProviders = results.map(\.itemProvider)
-        for (index, item) in itemProviders.enumerated() {
+        for item in itemProviders {
             if item.canLoadObject(ofClass: UIImage.self) {
                 item.loadObject(ofClass: UIImage.self) { [weak self] (image, error) in
                     DispatchQueue.main.async {
                         if let image = image as? UIImage {
+                            let randomNumber = Int.random(in: 10000...99999)
                             self?.imageList.append(image)
+                            self?.imageIds.append((self?.machineDetails.id ?? 0)+randomNumber)
                             self?.imagesCollectionView.reloadData()
+                            
                             self?.saveImage(
                                 selectedImage: image,
-                                imageId: (self?.machineDetails.id ?? 0)+index
+                                imageId: (self?.machineDetails.id ?? 0)+randomNumber
                             )
                         }
                     }
@@ -174,7 +191,8 @@ extension MachineDetailsViewController: UICollectionViewDelegate, UICollectionVi
             withReuseIdentifier: CollectionViewCellIdentifier.imageListCellId,
             for: indexPath
         ) as? ImageCollectionViewCell
-        cell?.setupContent(imageList[indexPath.row])
+        cell?.setupContent(imageList[indexPath.row], imageId: imageIds[indexPath.row])
+        cell?.delegate = self
         
         return cell ?? UICollectionViewCell()
     }
@@ -188,4 +206,10 @@ extension MachineDetailsViewController: UICollectionViewDelegate, UICollectionVi
 //        navigationController?.pushViewController(gameListVC, animated: true)
     }
     
+}
+
+extension MachineDetailsViewController: ImageCollectionViewCellDelegate {
+    func deleteImage(imageId: Int) {
+        viewModel.deleteImage(imageId)
+    }
 }

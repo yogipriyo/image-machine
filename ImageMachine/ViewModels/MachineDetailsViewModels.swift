@@ -10,7 +10,8 @@ import Foundation
 protocol MachineDetailsViewModelsDelegate {
     func machineDeleted()
     func imageSaved()
-    func retrievedImages(_ datas: [Data])
+    func retrievedImages(datas: [Data], ids: [Int])
+    func imageDeleted()
 }
 
 class MachineDetailsViewModels {
@@ -23,6 +24,12 @@ class MachineDetailsViewModels {
         }
     }
     
+    func deleteImage(_ imageId: Int) {
+        machineProvider.deleteImage(imageId) { [weak self] in
+            self?.delegate?.imageDeleted()
+        }
+    }
+    
     func saveImage(selectedImage: Data, machineId: Int, imageId: Int) {
         machineProvider.addImage(imageData: selectedImage, machineId: machineId, imageId: imageId) { [weak self] in
             self?.delegate?.imageSaved()
@@ -30,8 +37,8 @@ class MachineDetailsViewModels {
     }
     
     func getImages(machineId: Int) {
-        machineProvider.getMachineImages(machineId) { [weak self] datas in
-            self?.delegate?.retrievedImages(datas)
+        machineProvider.getMachineImages(machineId) { [weak self] datas, ids  in
+            self?.delegate?.retrievedImages(datas: datas, ids: ids)
         }
     }
 }

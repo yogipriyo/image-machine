@@ -32,21 +32,24 @@ class MachineProvider {
         return taskContext
     }
     
-//    func deleteAllFavorites(completion: @escaping() -> Void) {
-//        let taskContext = newTaskContext()
-//        taskContext.perform {
-//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameItem")
-//            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//            batchDeleteRequest.resultType = .resultTypeCount
-//
-//            if let batchDeleteResult = try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
-//                if batchDeleteResult.result != nil {
-//                    completion()
-//                }
-//            }
-//        }
-//    }
-//
+    func deleteImage(_ imageId: Int, completion: @escaping() -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ImageItem")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "imageId == \(imageId)")
+
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            batchDeleteRequest.resultType = .resultTypeCount
+
+            if let batchDeleteResult = try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult {
+                if batchDeleteResult.result != nil {
+                    completion()
+                }
+            }
+        }
+    }
+    
     func deleteMachine(_ id: Int, completion: @escaping() -> Void) {
         let taskContext = newTaskContext()
         taskContext.perform {
@@ -130,7 +133,7 @@ class MachineProvider {
         }
     }
 
-    func getMachineImages(_ machineId: Int, completion: @escaping(_ machineImage: [Data]) -> Void) {
+    func getMachineImages(_ machineId: Int, completion: @escaping(_ machineImage: [Data], _ imageIds: [Int]) -> Void) {
         let taskContext = newTaskContext()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ImageItem")
@@ -138,10 +141,12 @@ class MachineProvider {
             do {
                 let results = try taskContext.fetch(fetchRequest)
                 var dataList: [Data] = []
+                var idList: [Int] = []
                 for data in results {
                     dataList.append(data.value(forKey: "imageData") as! Data)
+                    idList.append(data.value(forKey: "imageId") as? Int ?? 0)
                 }
-                completion(dataList)
+                completion(dataList, idList)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
