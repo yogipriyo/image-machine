@@ -14,9 +14,11 @@ class MachineDetailsViewController: UIViewController {
     @IBOutlet weak var machineNameLabel: UILabel!
     @IBOutlet weak var machineTypeLabel: UILabel!
     @IBOutlet weak var machineCodeNumberLabel: UILabel!
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    private var imageList: [UIImage] = []
     private var machineDetails: Machine
     private var viewModel: MachineDetailsViewModels = MachineDetailsViewModels()
     
@@ -34,17 +36,22 @@ class MachineDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationItem.title = "Machine Details"
+        retrieveImages()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupDelegation()
+        viewModel.delegate = self
+        
+        setupCollectionView()
         populateContent()
     }
     
-    private func setupDelegation() {
-        viewModel.delegate = self
+    private func setupCollectionView() {
+        imagesCollectionView.delegate = self
+        imagesCollectionView.dataSource = self
+        imagesCollectionView.register(UINib(nibName: CollectionViewCellIdentifier.imageListCellId, bundle: nil), forCellWithReuseIdentifier: CollectionViewCellIdentifier.imageListCellId)
     }
     
     private func populateContent() {
@@ -54,11 +61,29 @@ class MachineDetailsViewController: UIViewController {
         machineCodeNumberLabel.text = String(machineDetails.codeNumber)
     }
     
+    private func saveImage(selectedImage: UIImage, imageId: Int) {
+        if let imageData = selectedImage.pngData() {
+            viewModel.saveImage(selectedImage: imageData, machineId: machineDetails.id, imageId: imageId)
+        }
+    }
+    
+    private func retrieveImages() {
+        viewModel.getImages(machineId: machineDetails.id)
+    }
+    
+    private func constructImageArray(_ datas: [Data]) {
+        for data in datas {
+            guard let image = UIImage(data: data) else { return }
+            imageList.append(image)
+            imagesCollectionView.reloadData()
+        }
+    }
+    
     @IBAction func machineImageTapped(_ sender: UIButton) {
         var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 3 // Selection limit. Set to 0 for unlimited.
-        configuration.filter = .images // he types of media that can be get.
-        // configuration.filter = .any([.videos,livePhotos]) // Multiple types of media
+        configuration.selectionLimit = 10
+        configuration.filter = .images
+        
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         present(picker, animated: true)
@@ -86,6 +111,13 @@ class MachineDetailsViewController: UIViewController {
 }
 
 extension MachineDetailsViewController: MachineDetailsViewModelsDelegate {
+    func retrievedImages(_ datas: [Data]) {
+        DispatchQueue.main.async { [weak self] in
+            print("image has been retrieved \(datas.count)")
+            self?.constructImageArray(datas)
+        }
+    }
+    
     func machineDeleted() {
         DispatchQueue.main.async { [weak self] in
             let alert = UIAlertController(title: "Success!", message: "Machine has been deleted", preferredStyle: .alert)
@@ -99,24 +131,61 @@ extension MachineDetailsViewController: MachineDetailsViewModelsDelegate {
         }
     }
     
+    func imageSaved() {
+        DispatchQueue.main.async { [weak self] in
+            print("image has been saved")
+        }
+    }
 }
 
 extension MachineDetailsViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         let itemProviders = results.map(\.itemProvider)
-        for item in itemProviders {
+        for (index, item) in itemProviders.enumerated() {
             if item.canLoadObject(ofClass: UIImage.self) {
-                item.loadObject(ofClass: UIImage.self) { (image, error) in
+                item.loadObject(ofClass: UIImage.self) { [weak self] (image, error) in
                     DispatchQueue.main.async {
                         if let image = image as? UIImage {
-                            print(image)
+                            self?.imageList.append(image)
+                            self?.imagesCollectionView.reloadData()
+                            self?.saveImage(
+                                selectedImage: image,
+                                imageId: (self?.machineDetails.id ?? 0)+index
+                            )
                         }
                     }
                 }
             }
         }
+        
+        imagesCollectionView.reloadData()
+    }
+}
+
+extension MachineDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imageList.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: CollectionViewCellIdentifier.imageListCellId,
+            for: indexPath
+        ) as? ImageCollectionViewCell
+        cell?.setupContent(imageList[indexPath.row])
+        
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let gameListVC: GameListViewController = GameListViewController(genres[indexPath.row])
+//        navigationController?.pushViewController(gameListVC, animated: true)
+    }
     
 }

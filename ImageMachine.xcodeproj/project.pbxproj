@@ -15,6 +15,8 @@
 		214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94332950D50F002AE17E /* CodeScannerViewController.xib */; };
 		214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D94362950E9C6002AE17E /* AddMachineViewController.swift */; };
 		214D94392950E9C6002AE17E /* AddMachineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214D94372950E9C6002AE17E /* AddMachineViewController.xib */; };
+		2157B595295366CB00A159D0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157B593295366CB00A159D0 /* ImageCollectionViewCell.swift */; };
+		2157B596295366CB00A159D0 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */; };
 		21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47802950C7BA00191791 /* AppDelegate.swift */; };
 		21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47822950C7BA00191791 /* SceneDelegate.swift */; };
 		21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47892950C7BA00191791 /* ImageMachine.xcdatamodeld */; };
@@ -42,6 +44,8 @@
 		214D94332950D50F002AE17E /* CodeScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeScannerViewController.xib; sourceTree = "<group>"; };
 		214D94362950E9C6002AE17E /* AddMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMachineViewController.swift; sourceTree = "<group>"; };
 		214D94372950E9C6002AE17E /* AddMachineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMachineViewController.xib; sourceTree = "<group>"; };
+		2157B593295366CB00A159D0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		21BB477D2950C7BA00191791 /* ImageMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB47802950C7BA00191791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB47822950C7BA00191791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		214D94292950D15E002AE17E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2157B592295366B100A159D0 /* CollectionViewCells */,
 				21F3A33629522309002FE873 /* TableViewCells */,
 				214D942A2950D175002AE17E /* HomepageViewController.swift */,
 				214D942B2950D175002AE17E /* HomepageViewController.xib */,
@@ -89,6 +94,15 @@
 				21F3A34029523527002FE873 /* MachineDetailsViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2157B592295366B100A159D0 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2157B593295366CB00A159D0 /* ImageCollectionViewCell.swift */,
+				2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		21BB47742950C7BA00191791 = {
@@ -234,6 +248,7 @@
 				214D94352950D50F002AE17E /* CodeScannerViewController.xib in Resources */,
 				21F3A33A29522399002FE873 /* MachineTableViewCell.xib in Resources */,
 				21F3A34229523527002FE873 /* MachineDetailsViewController.xib in Resources */,
+				2157B596295366CB00A159D0 /* ImageCollectionViewCell.xib in Resources */,
 				21BB478D2950C7BD00191791 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2157B595295366CB00A159D0 /* ImageCollectionViewCell.swift in Sources */,
 				21BB478B2950C7BA00191791 /* ImageMachine.xcdatamodeld in Sources */,
 				214D94342950D50F002AE17E /* CodeScannerViewController.swift in Sources */,
 				21F3A33E29522430002FE873 /* CellIdentifier.swift in Sources */,

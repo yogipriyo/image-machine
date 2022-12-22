@@ -8,3 +8,7 @@
 struct TableViewCellIdentifier {
     static var machineListCellId: String = "MachineTableViewCell"
 }
+
+struct CollectionViewCellIdentifier {
+    static var imageListCellId: String = "ImageCollectionViewCell"
+}

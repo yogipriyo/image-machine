@@ -110,32 +110,41 @@ class MachineProvider {
             }
         }
     }
+    
+    func addImage(imageData: Data, machineId: Int, imageId: Int, completion: @escaping() -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.performAndWait {
+            if let entity = NSEntityDescription.entity(forEntityName: "ImageItem", in: taskContext) {
+                let machine = NSManagedObject(entity: entity, insertInto: taskContext)
+                machine.setValue(machineId, forKeyPath: "machineId")
+                machine.setValue(imageData, forKeyPath: "imageData")
+                machine.setValue(imageId, forKeyPath: "imageId")
+                
+                do {
+                    try taskContext.save()
+                    completion()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        }
+    }
 
-//    func getFavoriteDetails(_ id: Int, completion: @escaping(_ favDetails: GameDetails) -> Void) {
-//        let taskContext = newTaskContext()
-//        taskContext.perform {
-//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GameItem")
-//            fetchRequest.fetchLimit = 1
-//            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
-//            do {
-//                if let result = try taskContext.fetch(fetchRequest).first {
-//                    let favorite = GameDetails(
-//                        id: Int(result.value(forKeyPath: "id") as? Int32 ?? 0),
-//                        slug: result.value(forKeyPath: "slug") as? String ?? "",
-//                        name: result.value(forKeyPath: "name") as? String ?? "",
-//                        description: result.value(forKeyPath: "description") as? String ?? "",
-//                        platforms: [], stores: [],
-//                        released: result.value(forKeyPath: "released") as? String ?? "",
-//                        backgroundImage: result.value(forKeyPath: "backgroundImage") as? String ?? "",
-//                        rating: result.value(forKeyPath: "rating") as? Double ?? 0.0,
-//                        ratingsCount: Int(result.value(forKeyPath: "ratingsCount") as? Int32 ?? 0)
-//                    )
-//
-//                    completion(favorite)
-//                }
-//        } catch let error as NSError {
-//            print("Could not fetch. \(error), \(error.userInfo)")
-//        }
-//      }
-//    }
+    func getMachineImages(_ machineId: Int, completion: @escaping(_ machineImage: [Data]) -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ImageItem")
+            fetchRequest.predicate = NSPredicate(format: "machineId == \(machineId)")
+            do {
+                let results = try taskContext.fetch(fetchRequest)
+                var dataList: [Data] = []
+                for data in results {
+                    dataList.append(data.value(forKey: "imageData") as! Data)
+                }
+                completion(dataList)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+      }
+    }
 }
