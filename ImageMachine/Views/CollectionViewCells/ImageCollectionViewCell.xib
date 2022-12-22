@@ -21,6 +21,14 @@
                             <constraint firstAttribute="height" constant="100" id="3CC-sF-2ei"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkD-fJ-lNg">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="overlayImageButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Tei-RN-QYf"/>
+                        </connections>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTg-WE-zVA">
                         <rect key="frame" x="0.0" y="114" width="100" height="35"/>
                         <state key="normal" title="Button"/>
@@ -35,8 +43,12 @@
             <constraints>
                 <constraint firstItem="CcS-DN-zof" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5hB-B9-Zqp"/>
                 <constraint firstAttribute="bottom" secondItem="nTg-WE-zVA" secondAttribute="bottom" constant="1" id="6Yz-hX-4wi"/>
+                <constraint firstItem="pkD-fJ-lNg" firstAttribute="centerX" secondItem="CcS-DN-zof" secondAttribute="centerX" id="FPE-1V-6hJ"/>
                 <constraint firstItem="CcS-DN-zof" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="FzO-FG-QAW"/>
+                <constraint firstItem="pkD-fJ-lNg" firstAttribute="centerY" secondItem="CcS-DN-zof" secondAttribute="centerY" id="M5G-oG-5Wl"/>
+                <constraint firstItem="pkD-fJ-lNg" firstAttribute="width" secondItem="CcS-DN-zof" secondAttribute="width" id="TxP-iz-cpd"/>
                 <constraint firstAttribute="top" secondItem="CcS-DN-zof" secondAttribute="top" id="VVd-dm-Gd3"/>
+                <constraint firstItem="pkD-fJ-lNg" firstAttribute="height" secondItem="CcS-DN-zof" secondAttribute="height" id="d4h-s8-WpN"/>
                 <constraint firstItem="nTg-WE-zVA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="icp-e3-HOe"/>
                 <constraint firstItem="nTg-WE-zVA" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="lYE-cP-Ohg"/>
             </constraints>

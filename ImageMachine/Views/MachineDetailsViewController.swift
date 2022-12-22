@@ -201,14 +201,14 @@ extension MachineDetailsViewController: UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 100, height: 150)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let gameListVC: GameListViewController = GameListViewController(genres[indexPath.row])
-//        navigationController?.pushViewController(gameListVC, animated: true)
-    }
-    
 }
 
 extension MachineDetailsViewController: ImageCollectionViewCellDelegate {
+    func openImage(mainImage: UIImage) {
+        let imageDetailsVC: ImageDetailsViewController = ImageDetailsViewController(mainImage)
+        self.navigationController?.pushViewController(imageDetailsVC, animated: true)
+    }
+    
     func deleteImage(imageId: Int) {
         viewModel.deleteImage(imageId)
     }
