@@ -13,6 +13,7 @@ class AddMachineViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var codeNumberTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     private var viewModel: AddMachineViewModels = AddMachineViewModels()
     
@@ -28,6 +29,13 @@ class AddMachineViewController: UIViewController {
         viewModel.delegate = self
         
         setupTextField()
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        saveButton.tintColor = .white
+        saveButton.layer.cornerRadius = 4
     }
     
     private func setupTextField() {

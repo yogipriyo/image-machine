@@ -23,11 +23,10 @@ class MachineListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         viewModel.delegate = self
-        addMachineButton.tintColor = .white
+        
+        setupViews()
         
         setupTable()
     }
@@ -36,6 +35,11 @@ class MachineListViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         self.tabBarController?.hidesBottomBarWhenPushed = true
+    }
+    
+    private func setupViews() {
+        addMachineButton.tintColor = .white
+        addMachineButton.layer.cornerRadius = 4
     }
     
     private func setupTable() {

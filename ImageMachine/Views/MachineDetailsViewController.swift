@@ -17,6 +17,7 @@ class MachineDetailsViewController: UIViewController {
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var machineImageButton: UIButton!
     
     private var imageList: [UIImage] = []
     private var imageIds: [Int] = []
@@ -46,7 +47,21 @@ class MachineDetailsViewController: UIViewController {
         viewModel.delegate = self
         
         setupCollectionView()
+        
         populateContent()
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        editButton.tintColor = .white
+        editButton.layer.cornerRadius = 4
+        
+        deleteButton.tintColor = .white
+        deleteButton.layer.cornerRadius = 4
+        
+        machineImageButton.tintColor = .white
+        machineImageButton.layer.cornerRadius = 4
     }
     
     private func setupCollectionView() {

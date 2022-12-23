@@ -13,6 +13,7 @@ class EditMachineViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var codeNumberTextField: UITextField!
+    @IBOutlet weak var updateButton: UIButton!
     
     private var machineDetails: Machine
     private var viewModel: EditMachineViewModels = EditMachineViewModels()
@@ -35,15 +36,21 @@ class EditMachineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        idTextField.isEnabled = false
         
         viewModel.delegate = self
         
-        populateTextField()
+        setupTextField()
+        
+        setupViews()
     }
     
-    private func populateTextField() {
+    private func setupViews() {
+        updateButton.tintColor = .white
+        updateButton.layer.cornerRadius = 4
+    }
+    
+    private func setupTextField() {
+        idTextField.isEnabled = false
         idTextField.text = String(machineDetails.id)
         nameTextField.text = machineDetails.name
         typeTextField.text = machineDetails.type

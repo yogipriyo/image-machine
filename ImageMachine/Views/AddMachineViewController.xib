@@ -13,6 +13,7 @@
                 <outlet property="codeNumberTextField" destination="4DL-hE-ze0" id="dG8-yX-P3J"/>
                 <outlet property="idTextField" destination="8hS-MC-fGc" id="E94-RV-4tT"/>
                 <outlet property="nameTextField" destination="zaV-bX-DBI" id="lB1-me-qk7"/>
+                <outlet property="saveButton" destination="8Ud-90-tVn" id="nSI-Dk-yu3"/>
                 <outlet property="typeTextField" destination="urf-p0-vve" id="bSe-WJ-BnI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -66,14 +67,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-cA-4bD">
-                    <rect key="frame" x="16" y="214.5" width="343" height="35"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-90-tVn">
+                    <rect key="frame" x="16" y="208" width="343" height="35"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.6705882352941176" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Save">
-                        <color key="baseBackgroundColor" red="0.98039215686274506" green="0.6705882352941176" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </buttonConfiguration>
+                    <buttonConfiguration key="configuration" style="plain" title="Save"/>
                     <connections>
-                        <action selector="saveMachineButtonTapped:" destination="-1" eventType="touchUpInside" id="IxA-16-iK3"/>
+                        <action selector="saveMachineButtonTapped:" destination="-1" eventType="touchUpInside" id="IaE-cK-6eY"/>
                     </connections>
                 </button>
             </subviews>
@@ -87,19 +87,19 @@
                 <constraint firstItem="zaV-bX-DBI" firstAttribute="trailing" secondItem="8hS-MC-fGc" secondAttribute="trailing" id="CaD-jy-AY6"/>
                 <constraint firstItem="zaV-bX-DBI" firstAttribute="leading" secondItem="8hS-MC-fGc" secondAttribute="leading" id="E7G-Op-f9h"/>
                 <constraint firstItem="3dA-NE-DHg" firstAttribute="top" secondItem="L1n-Uh-rgr" secondAttribute="bottom" constant="20" id="HMD-em-2sF"/>
-                <constraint firstItem="tb6-cA-4bD" firstAttribute="leading" secondItem="2M1-8Q-VyT" secondAttribute="leading" id="Jie-4a-a3O"/>
+                <constraint firstItem="8Ud-90-tVn" firstAttribute="leading" secondItem="2M1-8Q-VyT" secondAttribute="leading" id="Pea-fd-WYt"/>
                 <constraint firstItem="8hS-MC-fGc" firstAttribute="centerY" secondItem="2M1-8Q-VyT" secondAttribute="centerY" id="Ple-5n-yLq"/>
                 <constraint firstItem="4DL-hE-ze0" firstAttribute="trailing" secondItem="urf-p0-vve" secondAttribute="trailing" id="VK5-2q-InD"/>
                 <constraint firstItem="L1n-Uh-rgr" firstAttribute="leading" secondItem="2M1-8Q-VyT" secondAttribute="leading" id="aaI-GQ-Rj4"/>
                 <constraint firstItem="L1n-Uh-rgr" firstAttribute="top" secondItem="2M1-8Q-VyT" secondAttribute="bottom" constant="20" id="eOu-Op-PDT"/>
-                <constraint firstItem="tb6-cA-4bD" firstAttribute="top" secondItem="4DL-hE-ze0" secondAttribute="bottom" constant="32" id="f4b-fB-I1C"/>
                 <constraint firstItem="urf-p0-vve" firstAttribute="centerY" secondItem="3dA-NE-DHg" secondAttribute="centerY" id="ibQ-Ch-PzC"/>
                 <constraint firstItem="4DL-hE-ze0" firstAttribute="centerY" secondItem="3Qe-Ah-78d" secondAttribute="centerY" id="kaM-H0-ELn"/>
-                <constraint firstItem="tb6-cA-4bD" firstAttribute="trailing" secondItem="8hS-MC-fGc" secondAttribute="trailing" id="rew-cy-IZs"/>
+                <constraint firstItem="8Ud-90-tVn" firstAttribute="trailing" secondItem="8hS-MC-fGc" secondAttribute="trailing" id="pXf-5R-XjB"/>
                 <constraint firstItem="3Qe-Ah-78d" firstAttribute="leading" secondItem="3dA-NE-DHg" secondAttribute="leading" id="vWW-vK-uEW"/>
                 <constraint firstItem="2M1-8Q-VyT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vd5-wX-LY8"/>
                 <constraint firstItem="4DL-hE-ze0" firstAttribute="leading" secondItem="urf-p0-vve" secondAttribute="leading" id="vlO-zh-GY4"/>
                 <constraint firstItem="3Qe-Ah-78d" firstAttribute="top" secondItem="3dA-NE-DHg" secondAttribute="bottom" constant="20" id="vm9-Fs-Vbc"/>
+                <constraint firstItem="8Ud-90-tVn" firstAttribute="top" secondItem="3Qe-Ah-78d" secondAttribute="bottom" constant="32" id="wWu-Pc-6ZX"/>
                 <constraint firstItem="3dA-NE-DHg" firstAttribute="leading" secondItem="L1n-Uh-rgr" secondAttribute="leading" id="x48-gF-kb4"/>
                 <constraint firstItem="urf-p0-vve" firstAttribute="leading" secondItem="zaV-bX-DBI" secondAttribute="leading" id="ylo-mz-Xnu"/>
                 <constraint firstItem="urf-p0-vve" firstAttribute="trailing" secondItem="zaV-bX-DBI" secondAttribute="trailing" id="ynp-s2-rQo"/>
