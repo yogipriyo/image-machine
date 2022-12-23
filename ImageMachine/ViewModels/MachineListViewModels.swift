@@ -13,8 +13,8 @@ class MachineListViewModels {
     var delegate: MachineListViewModelsDelegate?
     private lazy var machineProvider: MachineProvider = { return MachineProvider() }()
     
-    func getAllMachines() {
-        machineProvider.getAllMachines() { [weak self] machineList in
+    func getAllMachines(sortingKey: String) {
+        machineProvider.getAllMachines(sortingKey: sortingKey) { [weak self] machineList in
             self?.delegate?.populateMachineList(machineList)
         }
     }

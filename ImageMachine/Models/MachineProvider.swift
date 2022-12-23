@@ -68,11 +68,11 @@ class MachineProvider {
         }
     }
     
-    func getAllMachines(completion: @escaping(_ members: [Machine]) -> Void) {
+    func getAllMachines(sortingKey: String, completion: @escaping(_ members: [Machine]) -> Void) {
         let taskContext = newTaskContext()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MachineItem")
-            let sort = NSSortDescriptor(key: "name", ascending: true)
+            let sort = NSSortDescriptor(key: sortingKey, ascending: true)
             fetchRequest.sortDescriptors = [sort]
             do {
                 let results = try taskContext.fetch(fetchRequest)

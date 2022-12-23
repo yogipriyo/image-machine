@@ -9,6 +9,8 @@ import UIKit
 
 class MachineListViewController: UIViewController {
     
+    @IBOutlet weak var sortByNameButton: UIButton!
+    @IBOutlet weak var sortByTypeButton: UIButton!
     @IBOutlet weak var addMachineButton: UIButton!
     @IBOutlet weak var machineListTableView: UITableView!
     
@@ -18,7 +20,7 @@ class MachineListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.getAllMachines()
+        viewModel.getAllMachines(sortingKey: SortingKeys.name.rawValue)
     }
 
     override func viewDidLoad() {
@@ -40,6 +42,12 @@ class MachineListViewController: UIViewController {
     private func setupViews() {
         addMachineButton.tintColor = .white
         addMachineButton.layer.cornerRadius = 4
+        
+        sortByNameButton.tintColor = .white
+        sortByNameButton.layer.cornerRadius = 4
+        
+        sortByTypeButton.tintColor = .white
+        sortByTypeButton.layer.cornerRadius = 4
     }
     
     private func setupTable() {
@@ -54,6 +62,14 @@ class MachineListViewController: UIViewController {
     @IBAction func addMachineButtonTapped(_ sender: UIButton) {
         let addMachineVC = AddMachineViewController()
         self.navigationController?.pushViewController(addMachineVC, animated: true)
+    }
+    
+    @IBAction func sortByNameTapped(_ sender: UIButton) {
+        viewModel.getAllMachines(sortingKey: SortingKeys.name.rawValue)
+    }
+    
+    @IBAction func sortByTypeTapped(_ sender: UIButton) {
+        viewModel.getAllMachines(sortingKey: SortingKeys.type.rawValue)
     }
     
 }

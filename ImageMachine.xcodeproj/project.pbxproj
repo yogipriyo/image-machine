@@ -17,6 +17,7 @@
 		2157B596295366CB00A159D0 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */; };
 		2157B5992954655300A159D0 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2157B5972954655300A159D0 /* ImageDetailsViewController.swift */; };
 		2157B59A2954655300A159D0 /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2157B5982954655300A159D0 /* ImageDetailsViewController.xib */; };
+		21698F12295582750019D7A4 /* SortingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21698F11295582750019D7A4 /* SortingKeys.swift */; };
 		217351DA2955161E0075CCC6 /* EditMachineViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217351D92955161E0075CCC6 /* EditMachineViewModels.swift */; };
 		21BB47812950C7BA00191791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47802950C7BA00191791 /* AppDelegate.swift */; };
 		21BB47832950C7BA00191791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB47822950C7BA00191791 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		2157B594295366CB00A159D0 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		2157B5972954655300A159D0 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		2157B5982954655300A159D0 /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
+		21698F11295582750019D7A4 /* SortingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingKeys.swift; sourceTree = "<group>"; };
 		217351D92955161E0075CCC6 /* EditMachineViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMachineViewModels.swift; sourceTree = "<group>"; };
 		21BB477D2950C7BA00191791 /* ImageMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB47802950C7BA00191791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				21F3A32929518F35002FE873 /* Machine.swift */,
 				21F3A32B29518F40002FE873 /* MachineProvider.swift */,
 				21F3A33D29522430002FE873 /* CellIdentifier.swift */,
+				21698F11295582750019D7A4 /* SortingKeys.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				21F3A3332951E967002FE873 /* ExtendedViewController.swift in Sources */,
 				21F3A32C29518F40002FE873 /* MachineProvider.swift in Sources */,
 				217351DA2955161E0075CCC6 /* EditMachineViewModels.swift in Sources */,
+				21698F12295582750019D7A4 /* SortingKeys.swift in Sources */,
 				214D94382950E9C6002AE17E /* AddMachineViewController.swift in Sources */,
 				214D942C2950D175002AE17E /* HomepageViewController.swift in Sources */,
 				21F3A32A29518F35002FE873 /* Machine.swift in Sources */,

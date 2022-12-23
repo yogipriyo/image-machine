@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="addMachineButton" destination="amh-Oa-6d8" id="M1y-k3-tZ8"/>
                 <outlet property="machineListTableView" destination="2rS-gO-ehF" id="egv-Qp-esX"/>
+                <outlet property="sortByNameButton" destination="KAb-pd-SjY" id="GS3-vg-09J"/>
+                <outlet property="sortByTypeButton" destination="9Dq-rl-Sru" id="uOt-CQ-XEz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +26,38 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-ey-eYB">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oa-9H-PO1">
+                            <rect key="frame" x="16" y="19.666666666666668" width="61" height="21.000000000000004"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-pd-SjY">
+                            <rect key="frame" x="85" y="12.666666666666664" width="70" height="35"/>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.6705882353" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="iqw-ch-tfN"/>
+                                <constraint firstAttribute="height" constant="35" id="p8j-9P-4Fs"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Name"/>
+                            <connections>
+                                <action selector="sortByNameTapped:" destination="-1" eventType="touchUpInside" id="aee-fx-V8t"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dq-rl-Sru">
+                            <rect key="frame" x="163" y="12.666666666666664" width="70" height="35"/>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.6705882353" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="6wI-AJ-8ui"/>
+                                <constraint firstAttribute="height" constant="35" id="N8i-0K-b5e"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Type"/>
+                            <connections>
+                                <action selector="sortByTypeTapped:" destination="-1" eventType="touchUpInside" id="ucT-Ua-Zcj"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amh-Oa-6d8">
                             <rect key="frame" x="343" y="12.666666666666664" width="55" height="35"/>
                             <color key="backgroundColor" red="0.98039215686274506" green="0.6705882352941176" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,8 +75,14 @@
                     <color key="backgroundColor" red="1" green="0.86274509803921573" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="amh-Oa-6d8" firstAttribute="centerY" secondItem="6G9-ey-eYB" secondAttribute="centerY" id="C2v-em-A9G"/>
+                        <constraint firstItem="4oa-9H-PO1" firstAttribute="centerY" secondItem="6G9-ey-eYB" secondAttribute="centerY" id="MDV-Bz-anT"/>
+                        <constraint firstItem="9Dq-rl-Sru" firstAttribute="centerY" secondItem="KAb-pd-SjY" secondAttribute="centerY" id="N9t-54-ycN"/>
+                        <constraint firstItem="KAb-pd-SjY" firstAttribute="leading" secondItem="4oa-9H-PO1" secondAttribute="trailing" constant="8" id="OM5-NQ-OSM"/>
                         <constraint firstAttribute="trailing" secondItem="amh-Oa-6d8" secondAttribute="trailing" constant="16" id="WA6-GK-y2Z"/>
                         <constraint firstAttribute="height" constant="60" id="eFo-9G-gbq"/>
+                        <constraint firstItem="9Dq-rl-Sru" firstAttribute="leading" secondItem="KAb-pd-SjY" secondAttribute="trailing" constant="8" id="gpd-mQ-mJS"/>
+                        <constraint firstItem="4oa-9H-PO1" firstAttribute="leading" secondItem="6G9-ey-eYB" secondAttribute="leading" constant="16" id="tvG-eM-Zxo"/>
+                        <constraint firstItem="KAb-pd-SjY" firstAttribute="centerY" secondItem="6G9-ey-eYB" secondAttribute="centerY" id="veG-4g-PeC"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2rS-gO-ehF">
@@ -61,7 +101,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6G9-ey-eYB" secondAttribute="trailing" id="opp-it-dxb"/>
                 <constraint firstItem="6G9-ey-eYB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tiS-x7-bLc"/>
             </constraints>
-            <point key="canvasLocation" x="50" y="20"/>
+            <point key="canvasLocation" x="49.275362318840585" y="19.565217391304348"/>
         </view>
     </objects>
     <resources>
