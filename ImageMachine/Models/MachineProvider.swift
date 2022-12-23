@@ -72,6 +72,8 @@ class MachineProvider {
         let taskContext = newTaskContext()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MachineItem")
+            let sort = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [sort]
             do {
                 let results = try taskContext.fetch(fetchRequest)
                 var machineList: [Machine] = []
