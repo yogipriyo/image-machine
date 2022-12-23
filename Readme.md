@@ -28,5 +28,9 @@ The whole feature map will look like this :
             - Image Removal
             - Delete Machine
 
+And here is the features diagram :
+
+![Machine Image Diagram](https://user-images.githubusercontent.com/855407/209255318-87fac512-260c-485f-a282-fc381d7db16f.jpg)
+
 
 
